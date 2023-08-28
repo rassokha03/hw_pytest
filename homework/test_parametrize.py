@@ -7,7 +7,7 @@ from selene import browser
 
 @pytest.fixture(
     scope='function',
-    autouse='True',
+    autouse=True,
     params=[(1900, 1200), (1900, 1080), (390, 844), (400, 850)]
 )
 def browser_settings(request):
