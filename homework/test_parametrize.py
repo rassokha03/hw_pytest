@@ -18,13 +18,13 @@ def browser_settings(request):
     browser.quit()
 
 @pytest.mark.parametrize('browser_settings',[(1250, 768), (1900, 1080)], indirect= True)
-def test_github_desktop():
+def test_github_desktop(browser_settings):
     browser.open('/')
     browser.element('[href="/login"]').click()
     pass
 
 @pytest.mark.parametrize('browser_settings',[(390, 844), (400, 850)], indirect= True)
-def test_github_mobile():
+def test_github_mobile(browser_settings):
     browser.open('/')
     browser.element('[class*="rounded my-1"]').click()
     browser.element('[href="/login"]').click()
